@@ -116,9 +116,9 @@
         text-align: left;
         min-height: 60px; }
       .timeline .timeline-content .message-area .remove-btn {
-        padding: 60%;
         text-align: right;
-        cursor: pointer; }
+        cursor: pointer;
+        display: block; }
     .timeline .timeline-content img {
       width: 50px;
       height: 40px;
@@ -154,3 +154,9 @@
     font-size: 15px;
     padding-top: 20px;
     color: wheat; }
+
+@media (max-width: 550px) {
+  .home-hero .content {
+    top: 30%; }
+    .home-hero .content h1 {
+      font-size: 30px; } }

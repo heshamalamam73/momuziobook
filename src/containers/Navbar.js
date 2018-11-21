@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Link } from "react-router-dom";
 import {connect } from 'react-redux';
 import {logout} from '../store/actions/auth';
+import DefaultProfileImg from "../img/dfimage.png";
+
 
 
 
@@ -19,9 +21,8 @@ import {logout} from '../store/actions/auth';
   
     return (
         <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
-                     <Link className="navbar-brand mr-auto"  to='/'>Momuzio Chat </Link>
-
-        <div className='navbar-nav container '>
+                     <Link className="navbar-brand "  to='/'>Momuzio Chat </Link>
+        <div className='navbar-nav  '>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -32,7 +33,7 @@ import {logout} from '../store/actions/auth';
                     >
                  <img 
                  alt={this.props.currentUser.user.username}
-                    src={this.props.currentUser.user.profileImg}
+                    src={this.props.currentUser.user.profileImg || DefaultProfileImg}
                     id='avatar'
                     />
                     <span id='title'>

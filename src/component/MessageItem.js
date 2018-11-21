@@ -12,7 +12,7 @@ const MessageItem = ({
   username,
   removeMessage,
   isCorrectUser
-}) => (
+ }) => (
   <div className='timeline'>
   
     <li className="timeline-content">
@@ -31,7 +31,7 @@ const MessageItem = ({
           </Moment>
         </span>
       {isCorrectUser &&(
-          <span  className='remove-btn' onClick={removeMessage}>Delete</span>
+          <a  className='remove-btn' onClick={removeMessage}>Delete</a>
       )}
       </div>
     </li>

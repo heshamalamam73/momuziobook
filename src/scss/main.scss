@@ -5,6 +5,7 @@
 
 .bg-dark{
     background-color: #21201c !important;
+   
 }
 
 .header{
@@ -153,9 +154,10 @@
              
             }
             .remove-btn{
-                padding: 60%;
+                // padding: 60%;
                 text-align: right;
                 cursor: pointer;
+                display: block;
            
                 
             }
@@ -210,3 +212,15 @@
 
     }
 }
+ 
+
+@media(max-width:550px){
+    .home-hero{
+        .content{
+            top:30%;
+            h1{
+                font-size: 30px;
+            }
+
+        }
+    }}
