@@ -71,7 +71,7 @@ export default class AuthForm extends Component {
                         <input value={password}  onChange={this.handlerChange} type="password" className="form-control" name='password' id="exampleInputPassword1" placeholder="Password"/>
                     </div>
                     {signup && (
-                          <div className="form-group">
+                          <div  className="form-group">
                                 <label htmlFor="exampleInputEmail1">User Name</label>
                                 <input value={username}  onChange={this.handlerChange} type="text" className="form-control" name='username' id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your username"/>
                                 <label htmlFor="exampleInputPassword1">Profile Image </label>

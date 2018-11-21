@@ -128,6 +128,7 @@
 .home-hero {
   width: 100%;
   height: 100vh;
+  min-height: 100vh;
   background-image: url("https://images.pexels.com/photos/1385627/pexels-photo-1385627.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
   background-position: center;
   background-size: cover;
@@ -157,6 +158,7 @@
 
 @media (max-width: 550px) {
   .home-hero .content {
-    top: 30%; }
+    top: 20%;
+    height: auto; }
     .home-hero .content h1 {
       font-size: 30px; } }
