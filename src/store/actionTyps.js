@@ -1,0 +1,5 @@
+export const ADD_ERROR = "FOUND_ERRORR";
+export const REMOVE_ERROR ="REMOVE_ERR";
+export const SET_CURRENT_USER = "SET_CURRENT_USER";
+export const LOAD_MESSAGES = "LOAD_MESSAGES";
+export const REMOVE_MESSAGE = "REMOVE_MESSAGE";

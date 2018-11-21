@@ -1,0 +1,11 @@
+{
+    "root": "build/",
+    "routes":{
+        "/**": "index.html"
+    },
+    "proxy":{
+        "/api":{
+            "origin": "https://momuzio-chat.herokuapp.com/"
+        }
+    }
+}
