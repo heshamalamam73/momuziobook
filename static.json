@@ -5,7 +5,7 @@
     },
     "proxy":{
         "/api":{
-            "origin": "https://momuzio-chat.herokuapp.com/"
+            "origin": "https://momuzio-chat.herokuapp.com/api"
         }
     }
 }
