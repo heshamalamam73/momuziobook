@@ -7,12 +7,15 @@ import {authUser } from '../store/actions/auth';
 import { removeError } from '../store/actions/errors';
 import withAuth from "../hocs/withAuth";
 import MessageForm from './MessageForm';
-import UserProfile from '../component/UserProfile';
+import PostForm from './PostForm';
+import ShowUser from '../component/ShowUser';
+import ShowPost from '../component/ShowPost';
+import EditPost from '../component/EditPost';
 
 
 
 const Main = props =>{
-    const {authUser ,errors ,removeError , currentUser,loadUserProfile} = props;
+    const {authUser ,errors ,removeError , currentUser} = props;
     return(
         <Switch>
             <Route
@@ -55,24 +58,28 @@ const Main = props =>{
                         );
                     }}
              />
-              <Route 
-                exact
-                path='/api/users/:id'
-                render={
-                    props =>{
-                        return(
-                            <UserProfile 
-                            errors={errors}
-                            removeError={removeError}
-                            onAuth={loadUserProfile}
-                                {...props}
-                            />
-                        );
-                    }}
-             />
+             
              <Route
              path="/users/:id/messages/new"
           component={withAuth(MessageForm)}
+        />
+         <Route
+             path="/users/:id/posts/new"
+          component={withAuth(PostForm)}
+        />
+          <Route
+             path="/auth/:id"
+          component={withAuth(ShowUser)}
+        />
+          <Route
+          exact
+             path="/users/:userId/posts/:postId"
+          component={withAuth(ShowPost)}
+        />
+         <Route
+         exact
+             path="/users/:userId/posts/:postId/edit"
+             component={withAuth(EditPost)}
         />
         </Switch>
     )

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios'
 
 
-export default class AuthForm extends Component {
+ class AuthForm extends Component {
     constructor(props){
         super(props)
         this.state={
@@ -54,7 +54,7 @@ export default class AuthForm extends Component {
       const { heading,buttonText,signup,errors,history,removeError} = this.props 
       history.listen(()=>{removeError();});
     return (
-        <div className="home-hero ">
+        <div className="sign-page">
         <div className='content'>
                 <h1>{heading}</h1>
                 {errors.message && (
@@ -88,3 +88,4 @@ export default class AuthForm extends Component {
     )
   }
 }
+export default AuthForm;

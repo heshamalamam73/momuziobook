@@ -8,49 +8,66 @@ import DefaultProfileImg from "../img/dfimage.png";
 
 
 
- class Navbar extends Component {
-    
 
+ class Navbar extends Component {
+ 
+  
     logout = (e) =>{
         e.preventDefault();
         this.props.logout();
+        
     }
 
   render() {
+      
     
   
     return (
         <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
-                     <Link className="navbar-brand "  to='/'>Momuzio Chat </Link>
+                     <Link className="navbar-brand "  to='/'>Momuzio </Link>
         <div className='navbar-nav  '>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                <Link
-                 className="navbar-brand mr-auto" 
-                    to='/'
-                    >
-                 <img 
-                 alt={this.props.currentUser.user.username}
-                    src={this.props.currentUser.user.profileImg || DefaultProfileImg}
-                    id='avatar'
-                    />
-                    <span id='title'>
-                    {this.props.currentUser.user.username}
-                    </span>
-                </Link>
-                {/* <form className="form-inline my-4 my-lg-0">
-                <input className="form-control mr-lg-2" type="search" placeholder="Search" aria-label="Search"/>
-                </form> */}
+                
+                
                         {this.props.currentUser.isAuthenticated ? (
                             <ul className="navbar-nav ">
+														{this.props.currentUser.user ? (
+															<Link
+																 to={`/auth/${this.props.currentUser.user.id}`}
+																 >
+
+																	<div className="current-user">
+																<img 
+																				alt={this.props.currentUser.user.username}
+																				src={this.props.currentUser.user.profileImg || DefaultProfileImg}
+																				id='avatar'
+																	/>
+																	<span id='title'>
+																				{this.props.currentUser.user.username}
+																	</span>
+
+																</div>
+																				
+														 </Link>
+
+
+
+
+
+
+                   
+
+                ) : false}
+                 
                             <li className="nav-item">
-                                <Link
+                                 <Link
                                 className="nav-link"
-                                 to={`/users/${this.props.currentUser.user.id}/messages/new`}
+                                 to={`/users/${this.props.currentUser.user.id}/posts/new`}
                                  >
-                                New Message
+                               New Post
                                  </Link>
                             </li>
                             <li className="nav-item" >
@@ -82,7 +99,8 @@ import DefaultProfileImg from "../img/dfimage.png";
 }
 function mapStateToProps(state) {
     return {
-      currentUser: state.currentUser
+    posts:state.posts,
+    currentUser: state.currentUser
     };
   }
 export default connect(mapStateToProps,{logout})(Navbar);
