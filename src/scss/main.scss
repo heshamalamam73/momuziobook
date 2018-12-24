@@ -288,46 +288,17 @@ background-color: #cdcdcd;}
 }
 
 
-@media(max-width:550px){
+@media(min-width:1000px){
     .timeline{
         margin: 30px auto;
-        width: 90%;
+        width: 40%;
         border-radius: 0;
         border-radius: 30px;
         text-align: center;
-        font-size: 12px;
+        background-color: #ececec;
+        box-shadow: 2px 1px #cdcdcd;
     }
-    .post-form{
-        
-     
-        width: 100%;
-        min-height: 100vh;
-        height: 100%;
-        textarea{
-            height: auto;
-            margin: 10px auto;
-            display: block
-        }
-        input{
-            margin: 0;
-            margin: 0 auto;
-        }
-        button{
-            margin: 0 auto;
-            width: 60%;
-            background-color: #21201c;
-            color: aliceblue;
-        }
-        label{
-            display: block;
-            margin: 0;
-            padding: 20px auto;
-            text-align: center;
-        }
-        img{
-            width: 80%;
-        }
-    }
+    
     .home-hero{
         .content{
             top:20%;
@@ -339,7 +310,81 @@ background-color: #cdcdcd;}
 
         }
     }}
-    @media(min-width:551px){
+    .sign-page{
+        background-image: url("https://images.pexels.com/photos/207896/pexels-photo-207896.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: absolute;
+        width: 100%;
+        min-height: 100vh;
+        height: auto;
+        .content{
+            
+            width: 100%;
+            display: block;
+            padding: 0 40px;
+            margin: 30px auto;
+            right: 50%;
+            position: absolute;
+            transform: translate(50%,20%);
+            form{
+                width: 80%;
+                padding: 0 20px;
+                display: block;
+                font-weight: bolder;
+                input{
+                    display: inline-flex;
+                    width: 50%;
+                    margin: 10px auto;
+                    
+                }
+                label{
+                    width: 30%;
+                    text-align: left;
+                }
+            }
+        }
+    }
+
+
+    @media(max-width:1000px){
+        
+        .sign-page{
+            width: 100%;
+            .content{
+                h1{
+                    padding: 40px;
+                    font-size: 1.5em;
+                    text-transform: capitalize;
+                    text-align: center;
+                }
+                width: 100%;
+                display: block;
+                position: absolute;
+                form{
+                    width: 100%;
+                    color: white;
+                    font-weight: bolder;
+                    padding: 0;
+                    margin: 0;
+                    text-align: center;
+                    input{
+                        display: inline-flex;
+                        font-size: 10px;
+                        width: 70%;
+                        
+                    }
+                    label{
+                        text-align: center;
+                        width: 20%;
+                        font-size: 14px;
+                        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                    }
+                }
+            }
+        }
         .timeline{
             margin: 30px auto;
             width: 80%;
@@ -350,7 +395,7 @@ background-color: #cdcdcd;}
         .home-hero{
             .content{
                 top:20%;
-
+    
                 h1{
                     font-size: 30px;
                     
@@ -359,7 +404,7 @@ background-color: #cdcdcd;}
     
             }
         }}
-
+    
         .user-profile{
             .profile-cover{
                 width: 100%;
@@ -379,20 +424,22 @@ background-color: #cdcdcd;}
                     border-radius: 30px;
                     
                     
-
-
+    
+    
                     .profile-img{
                         width: 100%;
                         display: block;
                         height: 180px;
                         margin: 0px auto;
                         max-height: 200px;
-
+                       
+    
                         img{
                             width: 100%;
                             border-radius: 30px;
                             max-height: 150px;
-
+                        
+    
                             
                         }
                       
@@ -403,10 +450,10 @@ background-color: #cdcdcd;}
                         text-transform: capitalize;
                         color: white;
                     }
-
+    
                    
-
-
+    
+    
                 }
             }
            
@@ -418,8 +465,8 @@ background-color: #cdcdcd;}
                 }
                 
             }
-
-
+    
+    
             
          
         }
@@ -451,9 +498,9 @@ background-color: #cdcdcd;}
                     h1{
                         font-size: 15px;
                         text-align: left;
-
+    
                     }
-
+    
                 }
                 .profile-date{
                     height: 80px;
@@ -487,45 +534,91 @@ background-color: #cdcdcd;}
             
                 
         }
-        @media(min-width:1000px){
+
+        @media(max-width:550px){
+            .navbar-dark{
+                #brand{
+                    text-align: center;
+                    width: 100%;
+                    letter-spacing: 10px;
+                    text-shadow: 2px 1px beige;
+                }
+            }
             .timeline{
                 margin: 30px auto;
-                width: 40%;
+                width: 90%;
                 border-radius: 0;
                 border-radius: 30px;
                 text-align: center;
-                background-color: #ececec;
-                box-shadow: 2px 1px #cdcdcd;
+                font-size: 12px;
             }
-            
-            .home-hero{
-                .content{
-                    top:20%;
-                    h1{
-                        font-size: 30px;
-                        
-                    }
-                    height: auto;
-        
-                }
-            }}
-            .sign-page{
-                background-image: url("https://images.pexels.com/photos/207896/pexels-photo-207896.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
-                background-attachment: fixed;
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
-                position: absolute;
+            .post-form{
+                
+             
                 width: 100%;
                 min-height: 100vh;
-                height: auto;
-                .content{
-                    width: 80%;
-                    text-align: center;
+                height: 100%;
+                textarea{
+                    height: auto;
+                    margin: 10px auto;
+                    display: block
+                }
+                input{
+                    margin: 0;
+                    margin: 0 auto;
+                }
+                button{
+                    margin: 0 auto;
+                    width: 60%;
+                    background-color: #21201c;
+                    color: aliceblue;
+                }
+                label{
                     display: block;
-                    margin: 30px auto;
-                    right: 50%;
-                    position: absolute;
-                    transform: translate(50%,50%);
+                    margin: 0;
+                    padding: 20px auto;
+                    text-align: center;
+                }
+                img{
+                    width: 80%;
                 }
             }
+        
+            .sign-page{
+
+                width: 100%;
+                .content{
+                    h1{
+                        font-size: 1.5em;
+                        text-transform: capitalize;
+                        text-align: center;
+                    }
+                    width: 100%;
+                    display: block;
+                    position: absolute;
+                    form{
+                        width: 100%;
+                        display: block;
+                        color: white;
+                        font-weight: bolder;
+                        padding: 0;
+                        margin: 0;
+                        text-align: center;
+                        input{
+                            display:block;
+                            font-size: 10px;
+                            width: 100%;
+                            
+                        }
+                        label{
+                            text-align: left;
+                            width: 100%;
+                            font-size: 14px;
+                            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                        }
+                    }
+                }
+            }
+        }
+        
+        

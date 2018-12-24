@@ -22,10 +22,11 @@ import {connect } from 'react-redux';
         // this.handleLike= this.handleLike.bind(this);
 
      }
+     
    
     componentDidMount = () => {
      const {userId,postId}=this.props.match.params
-     console.log(this.state.currentUser)
+     console.log(this.state.currentUser.user.id)
      Axios.get(`/api/users/${userId}/posts/${postId}`)
         .then(res => {
             this.setState({
@@ -33,6 +34,8 @@ import {connect } from 'react-redux';
                 user: res.data.user,
                 comments:res.data.comments
             })
+            console.log(this.state.post.user._id)
+            const postuserid= this.state.post.user._id
 
         })
     this.handleSubmitComment=(e)=>{
@@ -44,10 +47,12 @@ import {connect } from 'react-redux';
                 commentName: this.state.currentUser.user.username,
                 commentImg : this.state.currentUser.user.profileImg
             }
+
             Axios.post(`/api/users/${userId}/posts/${postId}/comments`,newcomment,{
                 
             })
             .then(
+                res =>{console.log(res)},
                 this.setState({text:''}),
 
             )
@@ -60,9 +65,9 @@ import {connect } from 'react-redux';
                 like:0
             })
             {!this.state.liked? this.setState({like: 1 }) : this.setState({like :0})}
+            console.log(this.state.like)
+          
 
-            let like= this.state.like
-            Axios.post(`/api/users/${userId}/posts/${postId}/comments`,like )
            
             }
       
@@ -78,6 +83,7 @@ import {connect } from 'react-redux';
  
     
   render() {
+
       const label = !this.state.like  ? "UnLike" : "like"
       const post =this.state.post
       const {userId,postId}=this.props.match.params
@@ -115,9 +121,11 @@ import {connect } from 'react-redux';
                {this.state.comments.map(comment =>{
                    
                    return(
-                       <div>
+                       <div key={comment._id}>
                            <h6> {comment.commentName}</h6>
-                             <p>{comment.text}</p>
+                           <p>{comment.text}</p>
+
+                             
 
                         
 
@@ -131,7 +139,8 @@ import {connect } from 'react-redux';
               <input type='text' value={this.state.text}  onChange={(e)=> this.setState({text:e.target.value})}/>
               </form>
               <button  onClick={this.handleLike}>{label}</button>
-              {this.props.currentUser ? (
+              
+              {this.state.currentUser.user === post.user ? (
 
                   <a href={`/users/${userId}/posts/${postId}/edit`}>edit</a>
               ): false}

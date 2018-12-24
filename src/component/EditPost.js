@@ -66,7 +66,7 @@ class EditPost extends Component {
 			text,
 			img
 		  }
-      axios.put(`/api/users/${userId}/posts/${postId}?_method=put`,newpost)
+      axios.put(`/api/users/${userId}/posts/${postId}`,newpost)
       .then(res => console.log(res))
       this.props.history.push("/");
    

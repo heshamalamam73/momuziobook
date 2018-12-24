@@ -13,6 +13,10 @@ class PostForm extends Component {
       state: false
 
     };
+    
+  }
+  componentDidMount(){
+ 
   }
 
   imgUpoad = (e) => {
@@ -51,16 +55,23 @@ class PostForm extends Component {
 		  const newpost ={
 			text,
 			img
-		  }
+      }
+      const texta = document.getElementById('text');
+      if (texta.value !== "momuzio"){
+        texta.setCustomValidity("you should add momuzio in the post");
+      } else{
+        texta.setCustomValidity("")
+      }
 	
      this.props.postNewPost(newpost);
      this.props.history.push("/");
+
    
     }
   render() {
     return (
       <form  className='post-form' onSubmit={this.handleNewPost} >
-      <label for='text'> Text </label>
+      <label htmlFor='text'> Text </label>
        <textarea 
       type='text'
       name='text'
@@ -69,7 +80,7 @@ class PostForm extends Component {
 
       onChange={(e)=> this.setState({text: e.target.value})}
       /> 
-      <label for='image'>
+      <label htmlFor='image'>
         Image
       </label>
       <input 

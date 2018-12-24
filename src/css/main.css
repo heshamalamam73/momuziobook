@@ -206,44 +206,80 @@
         .timeline .btns-box .btns .remove-btn:hover {
           opacity: 1; }
 
-@media (max-width: 550px) {
+@media (min-width: 1000px) {
   .timeline {
     margin: 30px auto;
-    width: 90%;
+    width: 40%;
     border-radius: 0;
     border-radius: 30px;
     text-align: center;
-    font-size: 12px; }
-  .post-form {
-    width: 100%;
-    min-height: 100vh;
-    height: 100%; }
-    .post-form textarea {
-      height: auto;
-      margin: 10px auto;
-      display: block; }
-    .post-form input {
-      margin: 0;
-      margin: 0 auto; }
-    .post-form button {
-      margin: 0 auto;
-      width: 60%;
-      background-color: #21201c;
-      color: aliceblue; }
-    .post-form label {
-      display: block;
-      margin: 0;
-      padding: 20px auto;
-      text-align: center; }
-    .post-form img {
-      width: 80%; }
+    background-color: #ececec;
+    box-shadow: 2px 1px #cdcdcd; }
   .home-hero .content {
     top: 20%;
     height: auto; }
     .home-hero .content h1 {
       font-size: 30px; } }
 
-@media (min-width: 551px) {
+.sign-page {
+  background-image: url("https://images.pexels.com/photos/207896/pexels-photo-207896.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 100%;
+  min-height: 100vh;
+  height: auto; }
+  .sign-page .content {
+    width: 100%;
+    display: block;
+    padding: 0 40px;
+    margin: 30px auto;
+    right: 50%;
+    position: absolute;
+    transform: translate(50%, 20%); }
+    .sign-page .content form {
+      width: 80%;
+      padding: 0 20px;
+      display: block;
+      font-weight: bolder; }
+      .sign-page .content form input {
+        display: inline-flex;
+        width: 50%;
+        margin: 10px auto; }
+      .sign-page .content form label {
+        width: 30%;
+        text-align: left; }
+
+@media (max-width: 1000px) {
+  .sign-page {
+    width: 100%; }
+    .sign-page .content {
+      width: 100%;
+      display: block;
+      position: absolute; }
+      .sign-page .content h1 {
+        padding: 40px;
+        font-size: 1.5em;
+        text-transform: capitalize;
+        text-align: center; }
+      .sign-page .content form {
+        width: 100%;
+        color: white;
+        font-weight: bolder;
+        padding: 0;
+        margin: 0;
+        text-align: center; }
+        .sign-page .content form input {
+          display: inline-flex;
+          font-size: 10px;
+          width: 70%; }
+        .sign-page .content form label {
+          text-align: center;
+          width: 20%;
+          font-size: 14px;
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; }
   .timeline {
     margin: 30px auto;
     width: 80%;
@@ -337,36 +373,66 @@
       text-align: left;
       padding: 10px; }
 
-@media (min-width: 1000px) {
+@media (max-width: 550px) {
+  .navbar-dark #brand {
+    text-align: center;
+    width: 100%;
+    letter-spacing: 10px;
+    text-shadow: 2px 1px beige; }
   .timeline {
     margin: 30px auto;
-    width: 40%;
+    width: 90%;
     border-radius: 0;
     border-radius: 30px;
     text-align: center;
-    background-color: #ececec;
-    box-shadow: 2px 1px #cdcdcd; }
-  .home-hero .content {
-    top: 20%;
-    height: auto; }
-    .home-hero .content h1 {
-      font-size: 30px; } }
-
-.sign-page {
-  background-image: url("https://images.pexels.com/photos/207896/pexels-photo-207896.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: absolute;
-  width: 100%;
-  min-height: 100vh;
-  height: auto; }
-  .sign-page .content {
-    width: 80%;
-    text-align: center;
-    display: block;
-    margin: 30px auto;
-    right: 50%;
-    position: absolute;
-    transform: translate(50%, 50%); }
+    font-size: 12px; }
+  .post-form {
+    width: 100%;
+    min-height: 100vh;
+    height: 100%; }
+    .post-form textarea {
+      height: auto;
+      margin: 10px auto;
+      display: block; }
+    .post-form input {
+      margin: 0;
+      margin: 0 auto; }
+    .post-form button {
+      margin: 0 auto;
+      width: 60%;
+      background-color: #21201c;
+      color: aliceblue; }
+    .post-form label {
+      display: block;
+      margin: 0;
+      padding: 20px auto;
+      text-align: center; }
+    .post-form img {
+      width: 80%; }
+  .sign-page {
+    width: 100%; }
+    .sign-page .content {
+      width: 100%;
+      display: block;
+      position: absolute; }
+      .sign-page .content h1 {
+        font-size: 1.5em;
+        text-transform: capitalize;
+        text-align: center; }
+      .sign-page .content form {
+        width: 100%;
+        display: block;
+        color: white;
+        font-weight: bolder;
+        padding: 0;
+        margin: 0;
+        text-align: center; }
+        .sign-page .content form input {
+          display: block;
+          font-size: 10px;
+          width: 100%; }
+        .sign-page .content form label {
+          text-align: left;
+          width: 100%;
+          font-size: 14px;
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; } }

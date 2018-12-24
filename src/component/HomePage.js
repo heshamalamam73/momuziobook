@@ -29,7 +29,7 @@ const Homepage = ({ currentUser }) => {
     );
   }
   return (
-    <div home-page>
+    <div className='home-page'>
       
  
      <PostTimeline

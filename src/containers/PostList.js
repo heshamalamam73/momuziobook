@@ -90,7 +90,7 @@ this.setState({
                   'borderColor':'#21201c',
                   'display':'block', 
                   "margin":"5px auto"}}
-                   type="text" className="input" onChange={this.handleChange} placeholder="Search..." />
+                   type="search" color='black' className="input" onChange={this.handleChange} placeholder="Search..." />
 
             {PostList}
           </ul>

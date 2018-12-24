@@ -96,10 +96,16 @@ const PostItem = ({
         </span>
         <div className='btns'>
         <button id='likebtn' onClick={handleLike} >like</button>
-        <button >comment</button>
+        <a  href={`/users/${userId}/posts/${id}`}> <button>Comment</button></a>
         {isCorrectUser &&(
-        <button   onClick={removePost} >Delete</button>
-         )}
+          <div>
+               <button   onClick={removePost} >Delete</button>
+           <a href={`/users/${userId}/posts/${id}/edit`}>edit</a>
+
+
+            </div>
+     
+        )}
           {/* {isCorrectUser &&(
         <button   onClick={removePost} >edit</button>
          )} */}

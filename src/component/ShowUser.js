@@ -1,24 +1,40 @@
 import React, { Component } from 'react'
-import Axios from 'axios';
+import axios from 'axios';
 import Moment from 'react-moment';
+import { menu, imgUpoad } from './helper';
 
 export default class ShowUser extends Component {
     state={
         user:[],
-        posts:[]
+				posts:[],
+				profileImg:''
     }
 
     componentDidMount(){
-        let {id}=this.props.match.params ;
-        Axios.get(`/api/auth/${id}`)
+				let {id}=this.props.match.params ;
+				
+        axios.get(`/api/auth/${id}`)
         .then(res=>(
-           
+					console.log(res.data.profileImg),
+
             this.setState({
-                user:res.data,
+								user:res.data,
+								profileImg:res.data.profileImg,
                 posts:res.data.posts
             })
-
-        ))
+				))
+				this.changeImage= (e)=>{
+					imgUpoad(e);
+					let img = document.getElementById('profileImg')
+					this.setState({
+						profileImg:img.src
+					})
+					console.log(this.state.profileImg)
+		
+					
+		
+				}
+			
     }
    
   render() {
@@ -30,20 +46,22 @@ export default class ShowUser extends Component {
     return (
       
       <div className='user-profile'>
-          <div className='profile-cover'>
+          	<div className='profile-cover'>
                 {/* <img src={default_cover} /> */}
-                    <div className='profile-content'>
-                    <div className='profile-img'>
-                    <a href={user.profileImg}>
-                    <img alt={user.username} src={user.profileImg}  />
+                    <div className='profile-content' onClick={this.handleClick}>
+													<div className='profile-img'>
+													<label>
+													<img id='profileImg'  alt={user.username} src={user.profileImg} />
+													<input onChange={this.changeImage} type='file' style={{"display":'none'}}/>
+													</label>
 
-                    </a>
-                    </div>
-                    <div className='profile-name'> 
-                    <h1>{user.username}</h1>
-                    </div>
+													</div>
+													<div className='profile-name'> 
+															<h1>{user.username}</h1>
+													</div>
+													
                      </div>
-          </div>
+          		</div>
        
             {
             this.state.posts.map((post,index) => {
@@ -55,7 +73,7 @@ export default class ShowUser extends Component {
                     <div  className="profile-image">
                    
                     
-                    <img src={user.profileImg  } alt={user.username} />
+                    <img  src={user.profileImg  } alt={user.username} />
 
                    
                         </div>
